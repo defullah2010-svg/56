@@ -291,7 +291,7 @@ function printPDF(tabId){
   const wrapper = document.createElement('div');
   wrapper.style.width='210mm';
   wrapper.style.minHeight='296mm';
-  wrapper.style.padding='30mm 10mm 16mm 10mm';
+  wrapper.style.padding='30mm 10mm 20mm 10mm';
   wrapper.style.boxSizing='border-box';
   wrapper.style.backgroundImage="url('images/background.png')";
   wrapper.style.backgroundSize="cover";
@@ -321,7 +321,7 @@ function printPDF(tabId){
   html2pdf().set({
     margin:0,
     filename: (tabId==='daily'?'daily':'monthly')+'-report.pdf',
-    image:{type:'jpeg', quality:0.96},
+    image:{type:'jpeg', quality:1},
     html2canvas:{scale:3, useCORS:true, backgroundColor:'#ffffff', scrollY:0},
     jsPDF:{unit:'mm', format:'a4', orientation:'portrait'}
   }).from(wrapper).save();
